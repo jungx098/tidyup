@@ -17,6 +17,14 @@ else
     SED=sed
 fi
 
+# If SED, dos2unix, vi are not found, exit
+if ! command -v $SED >/dev/null 2>&1 || \
+   ! command -v dos2unix >/dev/null 2>&1 || \
+   ! command -v vi >/dev/null 2>&1; then
+    echo "Error: SED, dos2unix, vi are not found"
+    exit 1
+fi
+
 for arg in "$@"; do
 
     # UNIX Line Ending

@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     # Mac OS X platform
     SED=gsed
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     # GNU/Linux platform
     SED=sed
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
     # Windows NT platform
     SED=sed
-elif [ "$(expr substr $(uname -s) 1 9)" == "CYGWIN_NT" ]; then
+elif [ "$(expr substr $(uname -s) 1 9)" = "CYGWIN_NT" ]; then
     # Cygwin NT platform
     SED=sed
 else
